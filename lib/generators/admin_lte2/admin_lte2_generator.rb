@@ -16,29 +16,6 @@ class AdminLte2Generator < Rails::Generators::Base
     copy_file '_admin_lte_2_header.html.erb', 'app/views/layouts/_admin_lte_2_header.html.erb'
     copy_file '_admin_lte_2_sidebar.html.erb', 'app/views/layouts/_admin_lte_2_sidebar.html.erb'
     copy_file 'admin_lte_2.html.erb', 'app/views/layouts/admin_lte_2.html.erb'
-
-    if yes?('Add layout to ApplicationController ? (y/n) ')
-      inject_into_file 'app/controllers/application_controller.rb', "\n  layout 'admin_lte_2'\n", after: 'class ApplicationController < ActionController::Base'
-    end
-
-    if yes?('Login Page ? (y/n)')
-      copy_file 'admin_lte_2_login.html.erb', 'app/views/layouts/admin_lte_2_login.html.erb'
-    end
-
-    if yes?('Devise ? (y/n) ')
-      gem 'devise'
-
-      run 'bundle install'
-      generate 'devise:install'
-
-      inject_into_file 'app/controllers/application_controller.rb', "\n  before_action :authenticate_user!\n", after: 'class ApplicationController < ActionController::Base'
-
-      environment "
-      config.to_prepare do
-        Devise::SessionsController.layout 'admin_lte_2_login'
-      end
-      "
-    end
   end
 
   private

@@ -5,9 +5,9 @@ require 'adminlte2/rails/version'
 Gem::Specification.new do |spec|
   spec.name          = "adminlte2-rails"
   spec.version       = AdminLTE2::Rails::VERSION
-  spec.authors       = ["Nicolas Besnard"]
-  spec.email         = ["besnard.nicolas@gmail.com"]
-  spec.homepage         = 'https://github.com/nicolas-besnard/adminlte2-rails'
+  spec.authors       = ["Thien"]
+  spec.email         = ["thiennx205@gmail.com"]
+  spec.homepage         = 'https://github.com/thiennx205/adminlte2-rails.git'
   spec.summary          = %q{Integrates the AdminLTE theme with the Rails asset pipeline}
   spec.description      = %q{AdminLTE is a premium Bootstrap theme for Backend.}
   spec.license       = "MIT"
